@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".LoginActivity">
+    tools:context=".SignupActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView"
         android:layout_width="345dp"
         android:layout_height="158dp"
         android:layout_marginTop="40dp"
@@ -21,13 +21,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Welcome Back!"
+                android:text="CREATE AN ACCOUNT"
                 android:textColor="@color/colorPurple"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -51,8 +52,24 @@
                 android:layout_height="5dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:background="@drawable/background" />
+
+            <EditText
+                android:id="@+id/nameBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox"
+                android:drawableLeft="@drawable/user"
+                android:drawablePadding="15dp"
+                android:drawableTint="@color/colorPurple"
+                android:ems="10"
+                android:hint="Enter Full Name"
+                android:inputType="textPersonName"
+                android:padding="15dp" />
 
             <EditText
                 android:id="@+id/emailBox"
@@ -72,8 +89,7 @@
                 android:id="@+id/passwordBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/textbox"
                 android:drawableLeft="@drawable/password"
                 android:drawablePadding="15dp"
@@ -83,16 +99,30 @@
                 android:inputType="textPassword"
                 android:padding="15dp" />
 
-            <TextView
-                android:id="@+id/textView4"
+            <EditText
+                android:id="@+id/referBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/textbox"
+                android:drawableLeft="@drawable/user"
+                android:drawablePadding="15dp"
+                android:drawableTint="@color/colorPurple"
+                android:ems="10"
+                android:hint=" Refer Code"
+                android:inputType="textPersonName"
+                android:padding="15dp" />
+
+            <Button
+                android:id="@+id/createNewBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="right"
-                android:text="Forget your password?"
-                android:textSize="14sp" />
+                android:background="@drawable/submit_btn"
+                android:text="SUBMIT"
+                android:textColor="@color/color_white"
+                app:backgroundTint="@android:color/holo_orange_dark" />
 
             <Button
                 android:id="@+id/loginBtn"
@@ -103,23 +133,19 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/submit_btn"
                 android:fadeScrollbars="false"
-                android:text="LOGIN"
+                android:text="Already Have An Account"
                 android:textColor="@color/color_white"
                 app:backgroundTint="?android:attr/textColorLinkInverse" />
 
-            <Button
-                android:id="@+id/createAccBtn"
+            <TextView
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/submit_btn"
-                android:text="CREATE ACCOUNT"
-                android:textColor="@color/color_white"
-                app:backgroundTint="@android:color/holo_orange_dark" />
-
+                android:gravity="center"
+                android:text="By signing up you agree to our privacy policy and terms and conitions."
+                android:textSize="10sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
