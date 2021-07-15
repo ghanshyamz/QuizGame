@@ -1,7 +1,12 @@
 package com.example.quizgame;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.quizgame.databinding.ActivityResultBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,6 +37,40 @@ public class ResultActivity extends AppCompatActivity {
         database.collection("users")
                 .document(FirebaseAuth.getInstance().getUid())
                 .update("coins", FieldValue.increment(points));
+
+        binding.goHomeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ResultActivity.this, MainActivity.class));
+            }
+        });
+
                 
+    }
+
+    private AlertDialog AskOption()
+    {
+        AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Are you sure you want to go back to Home?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        startActivity(new Intent(ResultActivity.this, MainActivity.class));
+                        //finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        return myQuittingDialogBox;
+
+    }
+
+    public void onBackPressed(){
+        AlertDialog diaBox = AskOption();
+        diaBox.show();
     }
 }

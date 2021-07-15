@@ -11,7 +11,7 @@
         android:id="@+id/profile_image"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/avatar"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
@@ -24,71 +24,52 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/textbox"
         android:drawableLeft="@drawable/email"
-        android:drawableTint="@color/colorPurple"
         android:drawablePadding="10dp"
+        android:drawableTint="@color/colorPurple"
         android:ems="10"
         android:hint="Email Address"
         android:inputType="textPersonName"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        app:layout_constraintTop_toBottomOf="@+id/nameBoxProfile" />
 
     <EditText
         android:id="@+id/nameBoxProfile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/textbox"
         android:drawableLeft="@drawable/user"
-        android:drawableTint="@color/colorPurple"
         android:drawablePadding="10dp"
+        android:drawableTint="@color/colorPurple"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailBoxProfile" />
-
-    <EditText
-        android:id="@+id/passBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/textbox"
-        android:drawableLeft="@drawable/password"
-        android:drawableTint="@color/colorPurple"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameBoxProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <Button
-        android:id="@+id/updateBtn"
-        android:layout_width="0dp"
+        android:id="@+id/logoutBtn"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/button_3"
         android:fontFamily="sans-serif-black"
-        android:text="@string/uptdate_profile"
+        android:text="LOGOUT"
         android:textColor="@color/color_white"
         app:backgroundTint="@color/colorBlue"
-        app:layout_constraintEnd_toEndOf="@+id/passBox"
-        app:layout_constraintStart_toStartOf="@+id/passBox"
-        app:layout_constraintTop_toBottomOf="@+id/passBox" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

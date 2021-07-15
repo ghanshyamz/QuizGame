@@ -83,36 +83,17 @@
       app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
   <Button
-      android:id="@+id/shareBtn"
+      android:id="@+id/goHomeBtn"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginStart="24dp"
-      android:layout_marginTop="24dp"
-      android:layout_marginEnd="8dp"
-      android:background="@drawable/button_3"
-      android:drawableLeft="@drawable/ic_share"
-      android:paddingLeft="25dp"
-      android:text="SHARE"
-      android:textColor="@color/color_white"
-      app:backgroundTint="@color/design_default_color_secondary"
-      app:layout_constraintEnd_toStartOf="@+id/restartBtn"
-      app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/earnedCoins" />
-
-  <Button
-      android:id="@+id/restartBtn"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
+      android:layout_marginStart="32dp"
       android:layout_marginTop="24dp"
       android:layout_marginEnd="32dp"
       android:background="@drawable/button_1"
-      android:text="RESTART"
+      android:text="GO BACK TO HOME"
       android:textColor="@color/color_white"
       app:backgroundTint="@color/darkOrange"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toEndOf="@+id/shareBtn"
+      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/earnedCoins" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,10 @@
         android:id="@+id/view7"
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        android:background="@drawable/background_bottom" />
+        android:background="@drawable/background_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view6"
@@ -45,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-black"
-        android:text="26000"
+        android:text="0"
         android:textColor="@color/color_white"
         android:textSize="46sp"
         app:layout_constraintEnd_toEndOf="@+id/textView12"
@@ -72,10 +75,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/textbox"
-        android:drawableLeft="@drawable/ic_paypal"
-        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_payments_24"
+        android:drawablePadding="20dp"
         android:ems="10"
-        android:hint="Paypal Email Address"
+        android:hint="Enter UPl Address"
         android:inputType="textPersonName"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="@+id/view6"

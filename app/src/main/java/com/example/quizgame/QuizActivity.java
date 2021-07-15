@@ -1,7 +1,9 @@
 package com.example.quizgame;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -90,7 +92,18 @@ public class QuizActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                reset();
+                if(index < questions.size() - 1) {
+                    index++;
+                    setNextQuestion();
+                }else {
+                    Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
+                    intent.putExtra("correct",correctAnswers);
+                    intent.putExtra("total",questions.size());
 
+                    startActivity(intent);
+                    //Toast.makeText(this,"Quiz Finished",Toast.LENGTH_SHORT).show();
+                }
             }
         };
     }
@@ -175,5 +188,34 @@ public class QuizActivity extends AppCompatActivity {
                 break;
 
         }
+    }
+
+
+    //to exit the running quiz
+    private AlertDialog AskOption()
+    {
+        AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Are you sure you want to go back to Home?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                        //finish();
+                        //finishAffinity();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        return myQuittingDialogBox;
+
+    }
+
+    public void onBackPressed(){
+        AlertDialog diaBox = AskOption();
+        diaBox.show();
     }
 }
