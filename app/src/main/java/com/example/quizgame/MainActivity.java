@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.wallet){
-            Toast.makeText(this, "wallet is clicked", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "wallet is clicked", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     {
         AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
                 .setTitle("Exit")
-                .setMessage("Are you sure you want to go back to Home?")
+                .setMessage("Are you sure want to close the app?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         //startActivity(new Intent(MainActivity.this, MainActivity.class));

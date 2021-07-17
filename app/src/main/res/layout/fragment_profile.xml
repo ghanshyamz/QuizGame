@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/emailBoxProfile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameBoxProfile" />
 
-    <EditText
+    <TextView
         android:id="@+id/nameBoxProfile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

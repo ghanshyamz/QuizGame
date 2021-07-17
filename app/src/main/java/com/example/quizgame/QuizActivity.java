@@ -187,6 +187,9 @@ public class QuizActivity extends AppCompatActivity {
                 }
                 break;
 
+            case R.id.quitBtn:
+                AlertDialog diaBox = AskOption();
+                diaBox.show();
         }
     }
 
@@ -196,10 +199,11 @@ public class QuizActivity extends AppCompatActivity {
     {
         AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
                 .setTitle("Exit")
-                .setMessage("Are you sure you want to go back to Home?")
+                .setMessage("Are you sure you want to quit the quiz?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                        timer.cancel();
                         //finish();
                         //finishAffinity();
                     }
