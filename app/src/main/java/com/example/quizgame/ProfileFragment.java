@@ -19,8 +19,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.jetbrains.annotations.NotNull;
-
 public class ProfileFragment extends Fragment {
 
     public ProfileFragment() {
@@ -37,33 +35,6 @@ public class ProfileFragment extends Fragment {
     FragmentProfileBinding binding;
     FirebaseFirestore database;
     User user;
-    FirebaseAuth auth ;
-
-
-
-    @NotNull
-    private AlertDialog AskOption()
-    {
-        AlertDialog myQuittingDialogBox =new AlertDialog.Builder(getContext())
-                .setTitle("Exit")
-                .setMessage("Are you sure want to logout?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-
-
-                        auth.signOut();
-                        startActivity(new Intent(getContext(), LoginActivity.class));
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .create();
-        return myQuittingDialogBox;
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -92,18 +63,19 @@ public class ProfileFragment extends Fragment {
         });
 
 
-
         binding.logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog diaBox = AskOption();
-                diaBox.show();
+
+                FirebaseAuth auth ;
+                auth = FirebaseAuth.getInstance();
+                auth.signOut();
+                startActivity(new Intent(getContext(), LoginActivity.class));
             }
         });
 
         return binding.getRoot();
     }
-
 
 
 }
