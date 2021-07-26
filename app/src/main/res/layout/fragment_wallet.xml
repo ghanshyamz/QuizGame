@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-light"
-        android:text="50.000 coins required to withdraw"
+        android:text="50,000 coins required to withdraw"
         android:textColor="@color/color_white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/currentCoins"

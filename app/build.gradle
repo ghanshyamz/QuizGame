@@ -1,8 +1,11 @@
     apply plugin: 'com.android.application'
     apply plugin: 'kotlin-android'
     apply plugin: 'com.google.gms.google-services'
+    // Apply the Performance Monitoring plugin
+    apply plugin: 'com.google.firebase.firebase-perf'
 
-android {
+
+    android {
     compileSdkVersion 30
 
     buildFeatures {
@@ -45,10 +48,11 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
-    implementation platform('com.google.firebase:firebase-bom:28.2.0')
+    implementation platform('com.google.firebase:firebase-bom:28.3.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-perf'
 
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation "androidx.core:core-ktx:+"
