@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.quizgame.databinding.ActivityMainBinding;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -32,7 +34,8 @@ import me.ibrahimsn.lib.OnItemSelectedListener;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-
+    FirebaseAnalytics analytics;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        auth = FirebaseAuth.getInstance();
+        analytics = FirebaseAnalytics.getInstance(this);
+        Bundle params = new Bundle();
+        params.putString("userName", String.valueOf(auth.getCurrentUser()));
 
         setSupportActionBar(binding.toolbar);
 
@@ -52,25 +60,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onItemSelect(int i) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
+                String screen = "ScreenError";
                 switch (i){
                     case 0:
+                        screen = "Categories";
                         transaction.replace(R.id.content,new HomeFragment());
                         transaction.commit();
                         break;
                     case 1:
+                        screen = "Leaderboards";
                         transaction.replace(R.id.content,new LeaderboardsFragment());
                         transaction.commit();
                         break;
                     case 2:
+                        screen = "Wallet";
                         transaction.replace(R.id.content,new WalletFragment());
                         transaction.commit();
                         break;
                     case 3:
+                        screen = "Profile";
                         transaction.replace(R.id.content,new ProfileFragment());
                         transaction.commit();
                         break;
                 }
+                analytics.logEvent(screen,params);
                 return false;
             }
         });
